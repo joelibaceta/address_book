@@ -25,6 +25,8 @@ gem 'ruby_identicon'
 gem 'quiet_assets'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
+gem "heroku"
+
 #===========================
 
 

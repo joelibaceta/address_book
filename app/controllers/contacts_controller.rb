@@ -14,9 +14,13 @@ class ContactsController < ApplicationController
   end
   
   def create
-    @contact = Contact.new(contact_params)
-    @contact.save
-    @contacts = Contact.order(:last_name)
+    contact = Contact.new(contact_params)
+    if contact.save
+      @contacts = Contact.order(:last_name)
+      
+    else
+      @contact = contact
+    end
     
   end
 
