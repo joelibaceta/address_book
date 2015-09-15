@@ -25,7 +25,8 @@ rake db:seed
 
 * How to run the test suite
 
-rake test
+$ rspec 
+$ cucumber
 
 * Services (job queues, cache servers, search engines, etc.)
 
