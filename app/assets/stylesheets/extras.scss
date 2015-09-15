@@ -69,7 +69,16 @@ body {
   width: 280px; 
   background-color: #fff !important;
   @include border-shadow(); 
-  
+  .options {
+    display: none;
+    float: right;
+  }
+}
+.col3:hover {
+  width: 300px; 
+  .options {
+    display: block;
+  }
 }
 .col4 { width: 380px; }
 .col5 { width: 480px; }
