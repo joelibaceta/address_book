@@ -2,7 +2,10 @@ class Contact < ActiveRecord::Base
   belongs_to :user
   
   validates_uniqueness_of :email, :scope => :user_id
-  validates :first_name, :last_name, :email, :address, presence: true
+  
+  validates :first_name, :last_name, :email presence: true
+  
+  validates :email, :email => true
   
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: ":id_identicon.png"
      validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/

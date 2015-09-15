@@ -40,3 +40,12 @@ six:
   address: "Lima-Peru"
   phone: "(51) 3245 3993"
   user_id: 1
+  
+  
+invalid_email_format_contact: 
+  first_name: "Juan"
+  last_name: "Perez"
+  email: "juan@perez"
+  address: "Lima-Peru"
+  phone: "(51) 9994 5323"
+  user_id: 1

@@ -36,14 +36,20 @@ end
 
 #===========================
 
+gem 'remote_syslog_logger'
+
 #===========================
 #      TESTING GEMS
 #===========================
 
-group :development, :test do 
+group :test do 
   gem 'rspec'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'factory_girl'
   gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 #===========================
