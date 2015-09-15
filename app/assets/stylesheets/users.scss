@@ -3,10 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .login-form {
+  margin-top: 50px;
   padding: 20px;
   color: #fff;
   --webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
   -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
   background-color: rgba(236, 240, 241,0.4);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  
+  .btn {
+    float:right;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 }

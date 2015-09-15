@@ -1,0 +1,10 @@
+$('#contact_form_modal').modal('hide');
+$('#grid').html("<%= j (render 'grid') %>");
+
+$('#masonry-container').masonry({
+  itemSelector: '.box',
+  isAnimated: !Modernizr.csstransitions, 
+  columnWidth: function( containerWidth ) {
+    return containerWidth / 6;
+  }
+}); 

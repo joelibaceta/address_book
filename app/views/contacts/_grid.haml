@@ -1,15 +1,32 @@
-#masonry-container.transitions-enabled.infinite-scroll.clearfix.centered
-  - @contacts.each do |contact|
-    %div{class: "box col3", first_name: "l_#{contact.first_name}", last_name: "l_#{contact.last_name}"}
-      .row.contact
-        .col-md-4.image-contact
-          =image_tag(contact.avatar)
-        .col-md-8.detail-contact
-          %h4= contact.name
-          %h5= contact.email
-          %p= contact.address
-          %p= contact.phone
+.row
+  .col-md-12
+    .message
+      - if @query != "%"
+        %p= "#{pluralize(@contacts.count, 'contact')} founded, Query: #{@query}"
+        %a{href: "#{contacts_path}", class: "btn btn-default"}(data-remote="true") Reset Query
+.row
+  .col-md-12
 
-#no-filtered.transitions-enabled.infinite-scroll.clearfix.centered
+    #masonry-container.transitions-enabled.infinite-scroll.clearfix.centered
+      - @contacts.each do |contact|
+        %div{class: "box col3", first_name: "l_#{contact.first_name}", last_name: "l_#{contact.last_name}"}
+          .row.contact
+            .col-md-4.image-contact
+              =image_tag(contact.avatar)
+            .col-md-8.detail-contact
+              %span.options 
+                %a.btn.btn-danger.btn-xs{href: "#{contact_path(contact.id)}"}(data-remote="true" data-method='delete' data-confirm="Are you sure to delete this contact?")
+                  %span.glyphicon.glyphicon-remove(aria-hidden="true")
+                %a.btn.btn-info.btn-xs{href: "#{edit_contact_path(contact.id)}"}(data-remote="true")
+                  %span.glyphicon.glyphicon-pencil(aria-hidden="true")
+              %h4
+                = contact.name
+            
+              %h5= contact.email
+              %p= contact.address
+              %p= contact.phone
+          
+            
+    #no-filtered.transitions-enabled.infinite-scroll.clearfix.centered
 
  

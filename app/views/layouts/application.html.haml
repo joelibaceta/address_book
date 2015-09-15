@@ -7,7 +7,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %nav.navbar.navbar-default
+    %nav.navbar.navbar-default.navbar-fixed-top
       .container-fluid
         .navbar-header
           %button(type= "button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
@@ -16,12 +16,23 @@
             %span.icon-bar  
             %span.icon-bar 
           %a.navbar-brand{href: "#{contacts_path}"} Contacts 
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse 
-          %ul.nav.navbar-nav
-            %li.active
-              = link_to 'New Contact', new_contact_path, remote: true 
-            %li
-              %a{href: "#"} Debug 
+        - if current_user != nil
+          .collapse.navbar-collapse 
+            %ul.nav.navbar-nav
+              %li.active
+                = link_to 'New Contact', new_contact_path, remote: true 
+              %li
+                %a{href: "#"} Debug 
+              %form{action: "#{contacts_path}"}(class="navbar-form navbar-left" role="search")
+                .form-group
+                  %input(type="text" name="query" class="form-control" placeholder="Search") 
+                %button(type="submit" class="btn btn-default")Submit 
+            %ul.nav.navbar-nav.navbar-right
+              %li 
+                %a{href: "#{destroy_user_session_path}"}(data-method='delete')
+                  Cerrar Sesion
+                  %span.glyphicon.glyphicon-log-out(aria-hidden="true")
+         
     
     .container
       = yield

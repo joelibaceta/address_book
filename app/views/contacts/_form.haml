@@ -13,4 +13,5 @@
             = f.input :address
             = f.input :phone
             = f.input :avatar
+            = f.input :user_id, as: :hidden, input_html: {value: "#{current_user.id}"} 
             = f.button :submit
