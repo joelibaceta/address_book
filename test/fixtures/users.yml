@@ -1,0 +1,4 @@
+one: {first_name: "Juan", last_name: "Perez", email: "juan@perez.com", address: "Lima-Peru", phone: "(51) 9994 5323"}
+two: {first_name: "Carlos", last_name: "Durant", email: "carlos@durant.com", address: "Lima-Peru", phone: "(51) 1234 3403"}
+three: {first_name: "Maria", last_name: "Rivera", email: "maria@rivera.com", address: "Lima-Peru", phone: "(51) 3942 1244"}
+four: {first_name: "Carla", last_name: "Molina", email: "carla@molina.com", address: "Lima-Peru", phone: "(51) 3245 3993"}

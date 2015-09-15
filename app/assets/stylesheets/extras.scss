@@ -1,0 +1,116 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+#no-filtered {
+  display: none;
+}
+
+@mixin border-shadow() {
+  --webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.28);
+}
+
+body {
+  background-image: url('/assets/background.jpg');
+}
+
+#contact-form {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.alphabet-menu {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  a {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 16px;
+    margin: 3px;
+  }
+  
+}
+
+.row.contact {
+  
+  margin-right: 0px !important;
+  .image-contact {
+    text-align: center;
+    padding-right: 5px !important;
+  }
+  .detail-contact {
+    background: #ecf0f1;
+  }
+}
+
+.centered { margin: 0 auto; }
+
+#masonry-container { 
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+.col1 { width: 80px; }
+.col2 { width: 180px; }
+.col3 { 
+  width: 280px; 
+  background-color: #fff !important;
+  @include border-shadow(); 
+  
+}
+.col4 { width: 380px; }
+.col5 { width: 480px; }
+
+.col1 img { max-width: 80px; }
+.col2 img { max-width: 180px; }
+.col3 img { max-width: 280px; }
+.col4 img { max-width: 380px; }
+.col5 img { max-width: 480px; }
+
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+      -ms-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.transitions-enabled.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.transitions-enabled.masonry  .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+
+/* disable transitions on container */
+.transitions-enabled.infinite-scroll.masonry {
+  -webkit-transition-property: none;
+     -moz-transition-property: none;
+      -ms-transition-property: none;
+       -o-transition-property: none;
+          transition-property: none;
+}

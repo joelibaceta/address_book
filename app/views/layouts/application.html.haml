@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title AddressBook
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button(type= "button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+            %span.sr-only Toggle navigation
+            %span.icon-bar 
+            %span.icon-bar  
+            %span.icon-bar 
+          %a.navbar-brand{href: "#{contacts_path}"} Contacts 
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse 
+          %ul.nav.navbar-nav
+            %li.active
+              = link_to 'New Contact', new_contact_path, remote: true 
+            %li
+              %a{href: "#"} Debug 
+    
+    .container
+      = yield
+    
+      
+
+#contact_form_modal.modal.fade 
+  
+        
