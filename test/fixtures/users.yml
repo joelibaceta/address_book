@@ -1,1 +1,8 @@
-one: {id: 1, first_name: "demo", last_name: "demo", email: "demo@demo.com", address: "Lima-Peru", phone: "(51) 9994 5323"} 
+one: 
+  id: 1
+  email: "demo@demo.com"
+  password: "12345678"  
+one: 
+  id: 2
+  email: "user@demo.com"
+  password: "12345678" 
