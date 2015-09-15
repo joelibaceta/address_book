@@ -43,6 +43,7 @@ end
 group :development, :test do 
   gem 'rspec'
   gem 'factory_girl'
+  gem 'cucumber'
 end
 
 #===========================
