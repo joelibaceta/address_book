@@ -47,8 +47,7 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl'
-  gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'warden-rspec-rails'
   gem 'database_cleaner'
   gem 'faker', git: 'git@github.com:stympy/faker.git'
 end

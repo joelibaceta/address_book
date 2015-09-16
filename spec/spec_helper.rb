@@ -5,6 +5,11 @@ require 'rubygems'
 require 'factory_girl'  
 
 require 'rspec-rails'
+ 
+
+require 'devise'
+
+ 
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
@@ -33,14 +38,15 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+   
+  #config.include Warden::Test::Helpers
   
   config.include RSpec::Matchers
   
   config.include FactoryGirl::Syntax::Methods
   
-  config.extend ControllerMacros, :type => :controller
+ # config.include Devise::TestHelpers, :type => :controller
   
-   
   
   FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
   FactoryGirl.find_definitions
@@ -63,6 +69,11 @@ RSpec.configure do |config|
     # a real object. This is generally recommended, and will default to
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
+  end
+  
+  
+  def sign_in(user)
+    warden.set_user(user)
   end
 
 # The settings below are suggested to provide a good initial experience
@@ -119,3 +130,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+Warden.test_mode!
