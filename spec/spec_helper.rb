@@ -1,3 +1,5 @@
+require File.expand_path("../../config/environment", __FILE__)
+
 require 'rubygems' 
  
 require 'factory_girl'  
