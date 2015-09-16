@@ -50,6 +50,7 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'faker', git: 'git@github.com:stympy/faker.git'
 end
 
 #===========================
