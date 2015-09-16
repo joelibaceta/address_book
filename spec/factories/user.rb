@@ -1,3 +1,4 @@
+
 FactoryGirl.define do
   factory :user do |f|  
     sequence(:email){ |n| "email_#{n}@#{n}.com" }
